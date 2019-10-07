@@ -46,7 +46,7 @@ namespace CloudExam
                 {
                     Title = "CloudExam API",
                     Version = "v1",
-                    Description = "CloudExam is an API",
+                    Description = "CloudExam API is the backend of the app.",
                     Contact = new OpenApiContact
                     {
                         Name = "Hector Rodriguez",
@@ -71,11 +71,8 @@ namespace CloudExam
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "CloudExam API");
+                c.RoutePrefix = string.Empty;
             });
-
-            var option = new RewriteOptions();
-            option.AddRedirect("^$", "swagger");
-            app.UseRewriter(option);
 
             app.UseMvc();
 

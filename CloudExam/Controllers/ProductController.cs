@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace CloudExam.Controllers
 {
+    /// <summary>
+    /// Products Endpoint
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     [ApiConventionType(typeof(DefaultApiConventions))]
@@ -19,13 +22,21 @@ namespace CloudExam.Controllers
         {
             _productService = productService;
         }
-
+        /// <summary>
+        /// Get all products async
+        /// </summary>
+        /// <returns>All the products</returns>
         [HttpGet]
         public async Task<ActionResult<List<Product>>> GetAllAsync()
         {
             return await _productService.GetAllAsync();
         }
 
+        /// <summary>
+        /// Get a Product
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>The Product</returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetAsync(int id)
         {
@@ -39,6 +50,11 @@ namespace CloudExam.Controllers
             return product;
         }
 
+        /// <summary>
+        /// Adds a Product
+        /// </summary>
+        /// <param name="product"></param>
+        /// <returns>The Product</returns>
         [HttpPost]
         public async Task<ActionResult<Product>> CreateAsync(Product product)
         {
@@ -47,6 +63,12 @@ namespace CloudExam.Controllers
             return CreatedAtAction(nameof(GetAsync), new { id = product.Id }, product);
         }
 
+        /// <summary>
+        /// Update a Product
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="product"></param>
+        /// <returns>The Product</returns>
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateAsync(int id, Product product)
         {
@@ -60,6 +82,11 @@ namespace CloudExam.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Delete a Product
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Result of the action</returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
