@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Http;
 using FluentValidation.AspNetCore;
 using CloudExam.Services;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Rewrite;
 
 namespace CloudExam
 {
@@ -71,6 +72,10 @@ namespace CloudExam
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "CloudExam API");
             });
+
+            var option = new RewriteOptions();
+            option.AddRedirect("^$", "swagger");
+            app.UseRewriter(option);
 
             app.UseMvc();
 
