@@ -9,10 +9,10 @@ namespace CloudExam.Models
 {
  
     [Table("Address")]
-    public class Address
+    public class Address: Entity
     {
         [Key]
-        public int AddressId { get; set; }
+        public  int Id { get; set; }
         public string Line1 { get; set; }
         public string City { get; set; }
         public string State { get; set; }

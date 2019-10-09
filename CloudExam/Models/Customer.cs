@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 namespace CloudExam.Models
 {
     [Table("Customer")]
-    public class Customer
+    public class Customer: Entity
     {
         [Key]
-        public int CustomerId { get; set; }
+        public int Id { get; set; }
         public int AddressId { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }

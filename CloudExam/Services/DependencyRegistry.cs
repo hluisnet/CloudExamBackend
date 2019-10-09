@@ -11,6 +11,10 @@ namespace CloudExam.Services
         public static IServiceCollection ConfigureServicesDependencies(this IServiceCollection services)
         {
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IAddressService, AddressService>();
+            services.AddScoped<IPaymentTypeService, PaymentTypeService>();
             return services;
         }
     }
