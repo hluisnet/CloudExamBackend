@@ -1,0 +1,16 @@
+C:\Development\Magaya\Backend\CloudExam\CloudExam\bin\x64\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Development\Magaya\Backend\CloudExam\CloudExam\bin\x64\Debug\netcoreapp2.2\appsettings.json
+C:\Development\Magaya\Backend\CloudExam\CloudExam\bin\x64\Debug\netcoreapp2.2\Properties\launchSettings.json
+C:\Development\Magaya\Backend\CloudExam\CloudExam\bin\x64\Debug\netcoreapp2.2\CloudExam.deps.json
+C:\Development\Magaya\Backend\CloudExam\CloudExam\bin\x64\Debug\netcoreapp2.2\CloudExam.runtimeconfig.json
+C:\Development\Magaya\Backend\CloudExam\CloudExam\bin\x64\Debug\netcoreapp2.2\CloudExam.runtimeconfig.dev.json
+C:\Development\Magaya\Backend\CloudExam\CloudExam\bin\x64\Debug\netcoreapp2.2\CloudExam.dll
+C:\Development\Magaya\Backend\CloudExam\CloudExam\bin\x64\Debug\netcoreapp2.2\CloudExam.pdb
+C:\Development\Magaya\Backend\CloudExam\CloudExam\obj\x64\Debug\netcoreapp2.2\CloudExam.csprojAssemblyReference.cache
+C:\Development\Magaya\Backend\CloudExam\CloudExam\obj\x64\Debug\netcoreapp2.2\CloudExam.RazorAssemblyInfo.cache
+C:\Development\Magaya\Backend\CloudExam\CloudExam\obj\x64\Debug\netcoreapp2.2\CloudExam.RazorAssemblyInfo.cs
+C:\Development\Magaya\Backend\CloudExam\CloudExam\obj\x64\Debug\netcoreapp2.2\CloudExam.AssemblyInfoInputs.cache
+C:\Development\Magaya\Backend\CloudExam\CloudExam\obj\x64\Debug\netcoreapp2.2\CloudExam.AssemblyInfo.cs
+C:\Development\Magaya\Backend\CloudExam\CloudExam\obj\x64\Debug\netcoreapp2.2\CloudExam.RazorTargetAssemblyInfo.cache
+C:\Development\Magaya\Backend\CloudExam\CloudExam\obj\x64\Debug\netcoreapp2.2\CloudExam.dll
+C:\Development\Magaya\Backend\CloudExam\CloudExam\obj\x64\Debug\netcoreapp2.2\CloudExam.pdb
