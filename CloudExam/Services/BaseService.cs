@@ -30,6 +30,7 @@ namespace CloudExam.Services
             }
 
             await this.Entities.AddAsync(entity);
+            SaveChangesAsync();
             return entity;
         }
         public virtual async Task<TEntity> UpdateAsync(TEntity obj)
@@ -46,6 +47,7 @@ namespace CloudExam.Services
             {
                 this.Entities.Update(obj);
             });
+            SaveChangesAsync();
             return obj;
         }
         public virtual async Task DeleteAsync(TEntity obj)
@@ -59,6 +61,7 @@ namespace CloudExam.Services
             {
                 Entities.Remove(obj);
             });
+            SaveChangesAsync();
         }
         public virtual async Task DeleteAsync(TKey id)
         {
@@ -70,6 +73,7 @@ namespace CloudExam.Services
             }
 
             this.Entities.Remove(objToDelete);
+            SaveChangesAsync();
         }
         public virtual async Task<TEntity> FindAsync(TKey id)
         {

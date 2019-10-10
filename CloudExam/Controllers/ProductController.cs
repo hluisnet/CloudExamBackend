@@ -1,5 +1,7 @@
-﻿using CloudExam.Models;
+﻿using AutoMapper;
+using CloudExam.Models;
 using CloudExam.Services;
+using CloudExam.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -17,10 +19,15 @@ namespace CloudExam.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;
+        private readonly IMapper _mapper;
 
-        public ProductController(IProductService productService)
+        public ProductController(IProductService productService, IMapper mapper)
         {
             _productService = productService;
+            this._mapper = mapper;
+
+
+            
         }
         /// <summary>
         /// Get all products async
@@ -56,11 +63,13 @@ namespace CloudExam.Controllers
         /// <param name="product"></param>
         /// <returns>The Product</returns>
         [HttpPost]
-        public async Task<ActionResult<Product>> CreateAsync(Product product)
+        public async Task<ActionResult<Product>> CreateAsync(ProductViewModel product)
         {
-            await _productService.CreateAsync(product);
+            var productObj = this._mapper.Map<ProductViewModel, Product>(product);
 
-            return CreatedAtAction(nameof(GetAsync), new { id = product.Id }, product);
+            await _productService.CreateAsync(productObj);
+
+            return CreatedAtAction(nameof(GetAsync), new { id = productObj.Id }, productObj);
         }
 
         /// <summary>

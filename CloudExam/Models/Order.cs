@@ -11,7 +11,7 @@ namespace CloudExam.Models
     public class Order: Entity
     {
     
-        public int? CustomerId { get; set; }
+        public int CustomerId { get; set; }
         public int AddressId { get; set; }
         public int PaymentTypeId { get; set; }
         public int Number { get; set; }

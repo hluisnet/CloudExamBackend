@@ -1,3 +1,4 @@
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,16 @@ namespace CloudExam
             services.AddMvc();
 
             services.ConfigureServicesDependencies();
+            //Automapper service
+           
+            // Auto Mapper Configurations
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
 
             services.AddSwaggerGen(c =>
             {

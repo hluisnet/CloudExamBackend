@@ -1,4 +1,5 @@
-﻿using CloudExam.Controllers;
+﻿using AutoMapper;
+using CloudExam.Controllers;
 using CloudExam.Models;
 using CloudExam.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -12,10 +13,12 @@ namespace CloudExam.Test
     public class TestProductController
     {
         private readonly IProductService _productService;
+        private readonly IMapper _mapper;
 
-        public TestProductController(IProductService productService)
+        public TestProductController(IProductService productService, IMapper mapper)
         {
             _productService = productService;
+            this._mapper = mapper;
         }
 
         [TestMethod]
@@ -23,7 +26,7 @@ namespace CloudExam.Test
         {
             var testProducts = GetTestProducts();
         
-            var controller = new ProductController(_productService);
+            var controller = new ProductController(_productService,_mapper);
 
             var result = controller.GetAsync(1).Result;
             Assert.IsNotNull(result);
