@@ -27,7 +27,7 @@ namespace CloudExam.Controllers
             this._mapper = mapper;
 
 
-            
+
         }
         /// <summary>
         /// Get all products async
@@ -75,13 +75,12 @@ namespace CloudExam.Controllers
         /// <summary>
         /// Update a Product
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="product"></param>
         /// <returns>The Product</returns>
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateAsync(int id, Product product)
+        [HttpPut]
+        public async Task<IActionResult> UpdateAsync(Product product)
         {
-            if (id != product.Id)
+            if (product == null)
             {
                 return BadRequest();
             }
