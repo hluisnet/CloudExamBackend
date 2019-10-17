@@ -11,29 +11,29 @@ namespace CloudExam.Services
 {
     public class DashboardService : IDashboardService
     {
-      
+
         public DbSet<Order> Orders { get; }
         public DbSet<OrderProduct> OrderProducts { get; }
         public DbSet<Customer> Customers { get; }
 
         protected CloudExamDbContext _dbContext { get; }
 
-        public DashboardService(CloudExamDbContext DbContext)
+        public DashboardService(CloudExamDbContext dbContext)
         {
-            _dbContext = DbContext;
-            //this.DbContext = dbContext as CloudExamDbContext;
 
-                this.Orders = (this._dbContext as CloudExamDbContext).Set<Order>();
-                this.OrderProducts = (this._dbContext as CloudExamDbContext).Set<OrderProduct>();
-                this.Customers = (this._dbContext as CloudExamDbContext).Set<Customer>();
-          
+            this._dbContext = dbContext;
+
+            this.Orders = this._dbContext.Set<Order>();
+            this.OrderProducts = this._dbContext.Set<OrderProduct>();
+            this.Customers = this._dbContext.Set<Customer>();
+
         }
 
-        public  DashboardViewModel GetDashboard()
+        public DashboardViewModel GetDashboard()
         {
             var dashboardViewModel = new DashboardViewModel();
 
-            var bestSellingProducts =  (from p in _dbContext.Products
+            var bestSellingProducts = (from p in _dbContext.Products
                                        join op in _dbContext.OrderProducts on p.Id equals op.ProductId
                                        group op by new { Name = p.Name } into o
                                        select new ItemValue
@@ -49,7 +49,7 @@ namespace CloudExam.Services
                                 {
                                     Name = g.Key.TopCustomer,
                                     Value = g.Count(x => x.CustomerId == g.Key.CustomerId)
-                                }).Where(x=> x.Value > 0).ToList();
+                                }).Where(x => x.Value > 0).ToList();
 
             dashboardViewModel.BestSellingProducts = bestSellingProducts;
             dashboardViewModel.TopCustomers = topCustomers;

@@ -18,11 +18,13 @@ namespace CloudExam.Controllers
     [ApiConventionType(typeof(DefaultApiConventions))]
     public class DashboardController : ControllerBase
     {
-        private DashboardService _dashboardService { get; set; }
+        private readonly IDashboardService _dashboardService;
+      
 
-        public DashboardController()
+        public DashboardController(IDashboardService dashboardService)
         {
-            _dashboardService = new DashboardService(new CloudExamDbContext(new DbContextOptions<CloudExamDbContext>()));
+
+            _dashboardService = dashboardService;
         }
 
         /// <summary>

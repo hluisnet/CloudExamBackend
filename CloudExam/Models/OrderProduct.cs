@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace CloudExam.Models
 {
     [Table("OrderProduct")]
-    public class OrderProduct
+    public class OrderProduct: Entity
     {
         [Key]
         public int OrderProductId { get; set; }

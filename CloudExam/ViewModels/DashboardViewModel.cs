@@ -9,7 +9,6 @@ namespace CloudExam.ViewModels
     {
         public List<ItemValue> BestSellingProducts { get; set; }
         public List<ItemValue> TopCustomers { get; set; }
-
         public DashboardViewModel()
         {
             BestSellingProducts = new List<ItemValue>();
@@ -22,6 +21,6 @@ namespace CloudExam.ViewModels
     {
         public string Name { get; set; }
         public decimal Value { get; set; }
-         
+
     }
 }

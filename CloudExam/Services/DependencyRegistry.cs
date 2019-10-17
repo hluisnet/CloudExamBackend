@@ -15,7 +15,7 @@ namespace CloudExam.Services
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IAddressService, AddressService>();
             services.AddScoped<IPaymentTypeService, PaymentTypeService>();
-            services.AddSingleton<IDashboardService, DashboardService>();
+            services.AddScoped<IDashboardService, DashboardService>();
             return services;
         }
     }

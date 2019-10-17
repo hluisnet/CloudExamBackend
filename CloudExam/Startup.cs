@@ -33,15 +33,15 @@ namespace CloudExam
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-          
+
             services.AddDbContext<CloudExamDbContext>(options =>
-              options.UseSqlServer(
-                  Configuration["Data:ConnectionString"])).BuildServiceProvider();
+                                      options.UseSqlServer(Configuration["Data:ConnectionString"])
+                                      ).BuildServiceProvider();
             services.AddMvc();
 
             services.ConfigureServicesDependencies();
             //Automapper service
-           
+
             // Auto Mapper Configurations
             var mappingConfig = new MapperConfiguration(mc =>
             {
@@ -67,7 +67,7 @@ namespace CloudExam
                 });
             });
         }
-       
+
         public void Configure(IApplicationBuilder app, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
         {
             if (env.IsDevelopment())

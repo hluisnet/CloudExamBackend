@@ -20,6 +20,7 @@ namespace CloudExam.Services
                 this.Entities = (this.DbContext as CloudExamDbContext).Set<TEntity>();
             }
         }
+
         public DbSet<TEntity> Entities { get; }
         public DbContext DbContext { get; }
         public virtual async Task<TEntity> CreateAsync(TEntity entity)

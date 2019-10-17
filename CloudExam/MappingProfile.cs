@@ -12,9 +12,7 @@ namespace CloudExam
     {
         public MappingProfile()
         {
-          
             this.CreateMap<ProductViewModel, Product>().ForMember(x => x.Id, opt => opt.Ignore());
-
         }
     }
 }
